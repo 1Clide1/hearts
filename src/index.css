@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: "Loved by the King", cursive;
 }
+html {
+  height: 100%;
+}
 
 /* for the root */
 :root {
@@ -12,4 +15,26 @@
   --secondary-color: #fbe8e7;
   --tertiary-color: #f7ddde;
   --quaternary-color: #ffc4d0;
+  --text-color: #dabb42;
+  --font-size-100: 0.75rem;
+  --font-size-200: 1rem;
+  --font-size-300: 1.2rem;
+  --font-size-400: 1.7rem;
+  --font-size-500: 2rem;
+  --font-size-500: 2rem;
+  --font-size-600: 2.5rem;
+  --font-size-700: 2.7rem;
+}
+
+body {
+  /* for the background image */
+  background: url(../public/Assets/gifs/pink-bg.gif) no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* background color and text color default */
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
