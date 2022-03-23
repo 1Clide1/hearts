@@ -1,0 +1,31 @@
+.svg {
+  display: inline-block;
+  position: relative;
+  max-height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+.rotate {
+  transform: rotate(180deg);
+}
+.letter-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 15rem;
+}
+.letter-body {
+  color: var(--text-color);
+  font-size: var(--font-size-400);
+  font-weight: 400;
+  z-index: 2;
+}
+.letter-body-section {
+  max-width: 90%;
+  max-height: auto;
+  border-radius: 0.3rem;
+  border: 0.5px solid var(--primary-color);
+  background-color: var(--rgbabg);
+  backdrop-filter: blur(5px);
+}
