@@ -20,6 +20,9 @@ This is just an app to help me understand how to use and create a small pwa app 
 
 ## Link
 
+![link to github pages](https://1clide1.github.io/hearts/)
+![Link to heroku](https://for-edina-hearts.herokuapp.com/)
+
 ## Technology
 
 The technologies used in this app are as follows: HTML, CSS, Javascript, React, Gh-pages npm,
