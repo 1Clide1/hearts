@@ -1,0 +1,43 @@
+{
+  "short_name": "My Love",
+  "name": "For My Love",
+  "icons": [
+    {
+      "src": "favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "Assets/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "Assets/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "Assets/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "description": "this is a website dedicated to my girlfriend, Edina",
+  "start_url": "/index.html",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "display": "standalone",
+  "theme_color": "#ffc4d0",
+  "background_color": "#fcf5ee"
+}
