@@ -26,7 +26,6 @@ const URLS = [
   "/hearts/favicon.ico",
   "/hearts/static/media/pink-bg.efb7a226fc069fbfa4e1.gif",
   "/hearts/manifest.json",
-  "/hearts/favicon.ico",
   "/hearts/Assets/icons/apple-touch-icon.png",
 ];
 // Respond with cached resources
