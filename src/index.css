@@ -7,6 +7,7 @@
 }
 html {
   height: 100%;
+  overflow-x: hidden;
 }
 
 /* for the root */
@@ -15,7 +16,8 @@ html {
   --secondary-color: #fbe8e7;
   --tertiary-color: #f7ddde;
   --quaternary-color: #ffc4d0;
-  --text-color: #dabb42;
+  --rgbabg: rgba(247, 221, 222, 0.7);
+  --text-color: #d6b634;
   --font-size-100: 0.75rem;
   --font-size-200: 1rem;
   --font-size-300: 1.2rem;
@@ -37,4 +39,22 @@ body {
   /* background color and text color default */
   background-color: var(--primary-color);
   color: var(--text-color);
+  animation: bgfade 1.5s cubic-bezier(0.47, 0, 0.59, 1.16) forwards;
+}
+/* animation for the background to fade in */
+@keyframes bgfade {
+  0% {
+    background: var(--primary-color);
+    opacity: 0;
+  }
+  50% {
+    backdrop-filter: blur(5px);
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(0px);
+  }
 }
