@@ -3,9 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 // import service worker
-// import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 // register service worker
-// serviceWorkerRegistration.register();
+serviceWorkerRegistration.register();
 
 // get service worker for dev mode
 import serviceWorker from "./swDev";
@@ -17,4 +17,4 @@ ReactDOM.render(
   document.getElementById("root")
 );
 // run the new service worker
-serviceWorker();
+// serviceWorker();

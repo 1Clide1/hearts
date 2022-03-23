@@ -71,6 +71,7 @@ self.addEventListener("message", (event) => {
 });
 
 // Any other custom service worker logic can go here.
+console.log("this is the service worker");
 // naming the cache and data
 const CACHE_NAME = "my-love-cache-v1";
 const DATA_CACHE_NAME = "data-cache-v1";
@@ -91,13 +92,38 @@ const FILES_TO_CACHE = [
   "/Assets/icons/android-chrome-152x512.png",
   "/Assets/icons/apple-touch-icon.png",
 ];
-
+const URLS = [
+  "/hearts/",
+  "/hearts/index.html",
+  "/hearts/static/media/line.e0115d9576e8cea5e789b9af68681348.svg",
+  "/hearts/favicon.ico",
+  "/hearts/static/media/pink-bg.efb7a226fc069fbfa4e1.gif",
+  "/hearts/manifest.json",
+  "/hearts/Assets/icons/apple-touch-icon.png",
+];
+// Respond with cached resources
+self.addEventListener("fetch", function (e) {
+  console.log("fetch request : " + e.request.url);
+  e.respondWith(
+    caches.match(e.request).then(function (request) {
+      if (request) {
+        // if cache is available, respond with cache
+        console.log("responding with cache : " + e.request.url);
+        return request;
+      } else {
+        // if there are no cache, try fetching request
+        console.log("file is not cached, fetching : " + e.request.url);
+        return fetch(e.request);
+      }
+    })
+  );
+});
 // installing the service worker
 self.addEventListener("install", function (evt) {
   evt.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log("files were pre-cached!!");
-      return cache.addAll(FILES_TO_CACHE);
+      return cache.addAll(URLS) || cache.addAll(FILES_TO_CACHE);
     })
   );
   self.skipWaiting();
