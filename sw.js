@@ -18,28 +18,13 @@ const FILES_TO_CACHE = [
   "/Assets/icons/android-chrome-152x512.png",
   "/Assets/icons/apple-touch-icon.png",
 ];
-const URLS = [
-  "/hearts/",
-  "/hearts/index.html",
-  "/hearts/static/media/line.daa55c7403d09e305d9bc7f32ba321a4.svg",
-  "/hearts/static/media/pink-bg.efb7a226fc069fbfa4e1.gif",
-  "/hearts/static/js/main.chunk.js",
-  "/hearts/static/js/0.chunk.js",
-  "/hearts/static/js/bundle.js",
-  "/hearts/manifest.json",
-  "/hearts/favicon.ico",
-  "/hearts/favicon-16x16.png",
-  "/hearts/favicon-32x32.png",
-  "/hearts/Assets/icons/android-chrome-192x192.png",
-  "/hearts/Assets/icons/android-chrome-152x512.png",
-  "/hearts/Assets/icons/apple-touch-icon.png",
-];
+const URLS = ["/hearts/", "/hearts/index.html"];
 // installing the service worker
 self.addEventListener("install", function (evt) {
   evt.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log("files were pre-cached!!");
-      return cache.addAll(FILES_TO_CACHE) || cache.addAll(URLS);
+      return cache.addAll(URLS) || cache.addAll(FILES_TO_CACHE);
     })
   );
   self.skipWaiting();
