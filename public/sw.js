@@ -39,7 +39,7 @@ self.addEventListener("install", function (evt) {
   evt.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log("files were pre-cached!!");
-      return cache.addAll(FILES_TO_CACHE || URLS);
+      return cache.addAll(FILES_TO_CACHE) || cache.addAll(URLS);
     })
   );
   self.skipWaiting();
