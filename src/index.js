@@ -8,7 +8,7 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 serviceWorkerRegistration.register();
 
 // get service worker for dev mode
-import serviceWorker from "./swDev";
+// import serviceWorker from "./swDev";
 
 ReactDOM.render(
   <React.StrictMode>
