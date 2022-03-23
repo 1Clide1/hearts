@@ -7,11 +7,11 @@
 // You can also remove this file if you'd prefer not to use a
 // service worker, and the Workbox build step will be skipped.
 
-import { clientsClaim } from 'workbox-core';
-import { ExpirationPlugin } from 'workbox-expiration';
-import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
-import { registerRoute } from 'workbox-routing';
-import { StaleWhileRevalidate } from 'workbox-strategies';
+import { clientsClaim } from "workbox-core";
+import { ExpirationPlugin } from "workbox-expiration";
+import { precacheAndRoute, createHandlerBoundToURL } from "workbox-precaching";
+import { registerRoute } from "workbox-routing";
+import { StaleWhileRevalidate } from "workbox-strategies";
 
 clientsClaim();
 
@@ -24,16 +24,16 @@ precacheAndRoute(self.__WB_MANIFEST);
 // Set up App Shell-style routing, so that all navigation requests
 // are fulfilled with your index.html shell. Learn more at
 // https://developers.google.com/web/fundamentals/architecture/app-shell
-const fileExtensionRegexp = new RegExp('/[^/?]+\\.[^/]+$');
+const fileExtensionRegexp = new RegExp("/[^/?]+\\.[^/]+$");
 registerRoute(
   // Return false to exempt requests from being fulfilled by index.html.
   ({ request, url }) => {
     // If this isn't a navigation, skip.
-    if (request.mode !== 'navigate') {
+    if (request.mode !== "navigate") {
       return false;
     } // If this is a URL that starts with /_, skip.
 
-    if (url.pathname.startsWith('/_')) {
+    if (url.pathname.startsWith("/_")) {
       return false;
     } // If this looks like a URL for a resource, because it contains // a file extension, skip.
 
@@ -43,16 +43,17 @@ registerRoute(
 
     return true;
   },
-  createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
+  createHandlerBoundToURL(process.env.PUBLIC_URL + "/index.html")
 );
 
 // An example runtime caching route for requests that aren't handled by the
 // precache, in this case same-origin .png requests like those from in public/
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
-  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.png'), // Customize this strategy as needed, e.g., by changing to CacheFirst.
+  ({ url }) =>
+    url.origin === self.location.origin && url.pathname.endsWith(".png"), // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new StaleWhileRevalidate({
-    cacheName: 'images',
+    cacheName: "images",
     plugins: [
       // Ensure that once this runtime cache reaches a maximum size the
       // least-recently used images are removed.
@@ -63,10 +64,74 @@ registerRoute(
 
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
     self.skipWaiting();
   }
 });
 
 // Any other custom service worker logic can go here.
+// naming the cache and data
+const CACHE_NAME = "my-love-cache-v1";
+const DATA_CACHE_NAME = "data-cache-v1";
+
+const FILES_TO_CACHE = [
+  "/",
+  "/index.html",
+  "/static/media/line.daa55c7403d09e305d9bc7f32ba321a4.svg",
+  "/static/media/pink-bg.efb7a226fc069fbfa4e1.gif",
+  "static/js/main.chunk.js",
+  "static/js/0.chunk.js",
+  "/static/js/bundle.js",
+  "/manifest.json",
+  "/favicon.ico",
+  "favicon-16x16.png",
+  "favicon-32x32.png",
+  "/Assets/icons/android-chrome-192x192.png",
+  "/Assets/icons/android-chrome-152x512.png",
+  "/Assets/icons/apple-touch-icon.png",
+];
+
+// installing the service worker
+self.addEventListener("install", function (evt) {
+  evt.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      console.log("files were pre-cached!!");
+      return cache.addAll(FILES_TO_CACHE);
+    })
+  );
+  self.skipWaiting();
+});
+// activating the service worker
+self.addEventListener("activate", function (evt) {
+  evt.waitUntil(
+    caches.keys().then((keyList) => {
+      return Promise.all(
+        keyList.map((key) => {
+          if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
+            console.log("removed the old cache", key);
+            return caches.delete(key);
+          }
+        })
+      );
+    })
+  );
+  self.clients.claim();
+});
+// intercept the fetch request with the service worker
+self.addEventListener("fetch", function (evt) {
+  // if the cache does not include an api
+  //   must have if there is no api
+  evt.respondWith(
+    fetch(evt.request).catch(function () {
+      return caches.match(evt.request).then(function (response) {
+        if (response) {
+          return response;
+        } else if (evt.request.headers.get("accept").includes("text/html")) {
+          // return the cached home page for all requests for html pages
+          return caches.match("/");
+        }
+      });
+    })
+  );
+});

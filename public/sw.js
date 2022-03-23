@@ -5,6 +5,11 @@ const DATA_CACHE_NAME = "data-cache-v1";
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
+  "/static/media/line.daa55c7403d09e305d9bc7f32ba321a4.svg",
+  "/static/media/pink-bg.efb7a226fc069fbfa4e1.gif",
+  "static/js/main.chunk.js",
+  "static/js/0.chunk.js",
+  "/static/js/bundle.js",
   "/manifest.json",
   "/favicon.ico",
   "favicon-16x16.png",
