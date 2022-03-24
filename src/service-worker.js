@@ -96,7 +96,7 @@ const URLS = [
   "/hearts/index.html",
   "/hearts/favicon.ico",
   "/hearts/manifest.json",
-  "/hearts/static/media/line.e0115d9576e8cea5e789b9af68681348.svg",
+  "/hearts/static/media/line.6a1fa93561f32409fb97a740a134646e.svg",
   "/hearts/Assets/icons/apple-touch-icon.png",
   "/hearts/static/css/main.85612fa0.css",
   "/hearts/static/js/main.52abe74c.js",
