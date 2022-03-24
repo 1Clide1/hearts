@@ -79,7 +79,7 @@ const DATA_CACHE_NAME = "data-cache-v1";
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
-  "/hearts/static/media/line.e0115d9576e8cea5e789b9af68681348.svg",
+  "/hearts/static/media/line.6a1fa93561f32409fb97a740a134646e.svg",
   "static/js/main.chunk.js",
   "static/js/0.chunk.js",
   "/hearts/static/js/bundle.js",
@@ -90,6 +90,7 @@ const FILES_TO_CACHE = [
   "/Assets/icons/android-chrome-192x192.png",
   "/Assets/icons/android-chrome-152x512.png",
   "/Assets/icons/apple-touch-icon.png",
+  "/hearts/static/media/pink-bg.5176571177603b123c76.mp4",
 ];
 const URLS = [
   "/hearts/",
@@ -98,8 +99,8 @@ const URLS = [
   "/hearts/manifest.json",
   "/hearts/static/media/line.6a1fa93561f32409fb97a740a134646e.svg",
   "/hearts/Assets/icons/apple-touch-icon.png",
-  "/hearts/static/css/main.85612fa0.css",
-  "/hearts/static/js/main.52abe74c.js",
+  "/hearts/static/css/",
+  "/hearts/static/js/",
   "/hearts/static/js/bundle.js",
   "/hearts/static/media/pink-bg.5176571177603b123c76.mp4",
 ];
