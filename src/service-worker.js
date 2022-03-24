@@ -95,6 +95,13 @@ const FILES_TO_CACHE = [
 const URLS = [
   "/hearts/",
   "/hearts/index.html",
+  "/hearts/favicon.ico",
+  "/hearts/manifest.json",
+  "/hearts/static/media/line.e0115d9576e8cea5e789b9af68681348.svg",
+  "/hearts/static/media/pink-bg.efb7a226fc069fbfa4e1.gif",
+  "/hearts/Assets/icons/apple-touch-icon.png",
+  "/hearts/static/css/main.0e32dd6a.css",
+  "/hearts/static/js/main.54ca3f44.js",
 ];
 // Respond with cached resources
 self.addEventListener("fetch", function (e) {
