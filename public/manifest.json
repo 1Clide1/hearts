@@ -35,7 +35,7 @@
   ],
   "description": "this is a website dedicated to my girlfriend, Edina",
   "start_url": "/index.html",
-  "scope": "https://for-edina-hearts.herokuapp.com/ https://1clide1.github.io/hearts/",
+  "scope": "https://for-edina-hearts.herokuapp.com/",
   "orientation": "portrait-primary",
   "display": "standalone",
   "theme_color": "#ffc4d0",
