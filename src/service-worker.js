@@ -98,9 +98,10 @@ const URLS = [
   "/hearts/manifest.json",
   "/hearts/static/media/line.e0115d9576e8cea5e789b9af68681348.svg",
   "/hearts/Assets/icons/apple-touch-icon.png",
-  "/hearts/static/css/main.0e32dd6a.css",
-  "/hearts/static/js/main.54ca3f44.js",
+  "/hearts/static/css/main.85612fa0.css",
+  "/hearts/static/js/main.52abe74c.js",
   "/hearts/static/js/bundle.js",
+  "/hearts/static/media/pink-bg.5176571177603b123c76.mp4",
 ];
 // Respond with cached resources
 self.addEventListener("fetch", function (e) {
