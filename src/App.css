@@ -10,6 +10,8 @@
   font-size: var(--font-size-700);
   font-weight: 700;
 }
+
+
 /* animation for the header to drop down from the top and for the header to also fade in */
 @keyframes fade {
   0% {

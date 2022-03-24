@@ -14,7 +14,7 @@
   align-items: center;
   text-align: center;
   margin-top: 15rem;
-  animation: letter 3s ease forwards;
+  animation: letter 1.5s ease forwards;
 }
 .letter-body {
   color: var(--text-color);

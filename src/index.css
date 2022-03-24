@@ -17,7 +17,7 @@ html {
   --tertiary-color: #f7ddde;
   --quaternary-color: #ffc4d0;
   --rgbabg: rgba(247, 221, 222, 0.3);
-  --text-color: #d6b634;
+  --text-color: #c9a105;
   --font-size-100: 0.75rem;
   --font-size-200: 1rem;
   --font-size-300: 1.2rem;
@@ -29,13 +29,6 @@ html {
 }
 
 body {
-  /* for the background image */
-  background: url(../public/Assets/gifs/pink-bg.gif) no-repeat center center
-    fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   /* background color and text color default */
   background-color: var(--primary-color);
   color: var(--text-color);
