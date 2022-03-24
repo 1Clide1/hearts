@@ -93,6 +93,7 @@ const FILES_TO_CACHE = [
   "/Assets/icons/apple-touch-icon.png",
 ];
 const URLS = [
+  "/",
   "/hearts/",
   "/hearts/index.html",
   "/hearts/static/media/line.e0115d9576e8cea5e789b9af68681348.svg",

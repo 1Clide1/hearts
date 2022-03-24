@@ -39,12 +39,11 @@ body {
   /* background color and text color default */
   background-color: var(--primary-color);
   color: var(--text-color);
-  animation: bgfade 1.5s cubic-bezier(0.47, 0, 0.59, 1.16) forwards;
+  animation: bgfade 1s cubic-bezier(0.47, 0, 0.59, 1.16) forwards;
 }
 /* animation for the background to fade in */
 @keyframes bgfade {
   0% {
-    background: var(--primary-color);
     opacity: 0;
   }
   50% {

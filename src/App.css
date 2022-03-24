@@ -2,7 +2,7 @@
   text-align: center;
   background-color: var(--secondary-color);
   box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);
-  animation: fade 1s cubic-bezier(0.47, 0, 0.59, 1.16) forwards;
+  animation: fade 1.5s cubic-bezier(0.47, 0, 0.59, 1.16) forwards;
   width: 100vw;
   height: auto;
 }
@@ -13,15 +13,15 @@
 /* animation for the header to drop down from the top and for the header to also fade in */
 @keyframes fade {
   0% {
-    position: relative;
+    transform: translateY(-100%);
     opacity: 0;
     backdrop-filter: blur(5px);
-    bottom: 5rem;
   }
   50% {
-    bottom: 0rem;
+    transform: translateY(5%);
   }
   100% {
+    transform: translateY(0);
     opacity: 1;
     backdrop-filter: blur(0px);
   }
