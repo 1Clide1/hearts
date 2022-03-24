@@ -35,7 +35,7 @@
   ],
   "description": "this is a website dedicated to my girlfriend, Edina",
   "start_url": "/index.html",
-  "scope": "/",
+  "scope": "/index.html",
   "orientation": "portrait-primary",
   "display": "standalone",
   "theme_color": "#ffc4d0",
