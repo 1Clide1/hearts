@@ -99,8 +99,6 @@ const URLS = [
   "/hearts/manifest.json",
   "/hearts/static/media/line.6a1fa93561f32409fb97a740a134646e.svg",
   "/hearts/Assets/icons/apple-touch-icon.png",
-  "/hearts/static/css/",
-  "/hearts/static/js/",
   "/hearts/static/js/bundle.js",
   "/hearts/static/media/pink-bg.5176571177603b123c76.mp4",
 ];
