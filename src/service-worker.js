@@ -71,7 +71,7 @@ self.addEventListener("message", (event) => {
 });
 
 // Any other custom service worker logic can go here.
-console.log("this is the service worker");
+console.log("service worker ready to go!");
 // naming the cache and data
 const CACHE_NAME = "my-love-cache-v1";
 const DATA_CACHE_NAME = "data-cache-v1";
