@@ -6,11 +6,10 @@ const DATA_CACHE_NAME = "data-cache-v1";
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
-  "/static/media/line.daa55c7403d09e305d9bc7f32ba321a4.svg",
-  "/static/media/pink-bg.efb7a226fc069fbfa4e1.gif",
+  "/hearts/static/media/line.6a1fa93561f32409fb97a740a134646e.svg",
   "static/js/main.chunk.js",
   "static/js/0.chunk.js",
-  "/static/js/bundle.js",
+  "/hearts/static/js/bundle.js",
   "/manifest.json",
   "/favicon.ico",
   "favicon-16x16.png",
@@ -18,15 +17,7 @@ const FILES_TO_CACHE = [
   "/Assets/icons/android-chrome-192x192.png",
   "/Assets/icons/android-chrome-152x512.png",
   "/Assets/icons/apple-touch-icon.png",
-];
-const URLS = [
-  "/hearts/",
-  "/hearts/index.html",
-  "/hearts/static/media/line.e0115d9576e8cea5e789b9af68681348.svg",
-  "/hearts/favicon.ico",
-  "/hearts/static/media/pink-bg.efb7a226fc069fbfa4e1.gif",
-  "/hearts/manifest.json",
-  "/hearts/Assets/icons/apple-touch-icon.png",
+  "/Assets/gifs/pink-bg.gif",
 ];
 // Respond with cached resources
 self.addEventListener("fetch", function (e) {
@@ -50,7 +41,7 @@ self.addEventListener("install", function (evt) {
   evt.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log("files were pre-cached!!");
-      return cache.addAll(URLS) || cache.addAll(FILES_TO_CACHE);
+      return cache.addAll(FILES_TO_CACHE);
     })
   );
   self.skipWaiting();
