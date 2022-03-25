@@ -84,12 +84,4 @@
   <body>
     <div id="root"></div>
   </body>
-  <script>
-    // service worker for heroku
-    if (navigator.serviceWorker) {
-      navigator.serviceWorker.register("/hearts/sw.js", {
-        scope: "https://for-edina-hearts.herokuapp.com/",
-      });
-    }
-  </script>
 </html>
