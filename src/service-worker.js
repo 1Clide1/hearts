@@ -90,7 +90,7 @@ const FILES_TO_CACHE = [
   "/Assets/icons/android-chrome-192x192.png",
   "/Assets/icons/android-chrome-152x512.png",
   "/Assets/icons/apple-touch-icon.png",
-  "/hearts/static/media/pink-bg.5176571177603b123c76.mp4",
+  "/Assets/gifs/pink-bg.gif",
 ];
 const URLS = [
   "/hearts/",
@@ -101,7 +101,6 @@ const URLS = [
   "/hearts/Assets/icons/apple-touch-icon.png",
   "/hearts/static/css/main.b2cece8f.css",
   "/hearts/static/js/main.3d67e44e.js",
-  "/hearts/static/media/pink-bg.5176571177603b123c76.mp4",
 ];
 // Respond with cached resources
 self.addEventListener("fetch", function (e) {
