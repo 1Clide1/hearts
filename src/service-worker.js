@@ -76,22 +76,22 @@ console.log("service worker ready to go!");
 const CACHE_NAME = "my-love-cache-v1";
 const DATA_CACHE_NAME = "data-cache-v1";
 
-const FILES_TO_CACHE = [
-  "/",
-  "/index.html",
-  "/hearts/static/media/line.6a1fa93561f32409fb97a740a134646e.svg",
-  "static/js/main.chunk.js",
-  "static/js/0.chunk.js",
-  "/hearts/static/js/bundle.js",
-  "/manifest.json",
-  "/favicon.ico",
-  "favicon-16x16.png",
-  "favicon-32x32.png",
-  "/Assets/icons/android-chrome-192x192.png",
-  "/Assets/icons/android-chrome-152x512.png",
-  "/Assets/icons/apple-touch-icon.png",
-  "/Assets/gifs/pink-bg.gif",
-];
+// const FILES_TO_CACHE = [
+//   "/",
+//   "/index.html",
+//   "/hearts/static/media/line.6a1fa93561f32409fb97a740a134646e.svg",
+//   "static/js/main.chunk.js",
+//   "static/js/0.chunk.js",
+//   "/hearts/static/js/bundle.js",
+//   "/manifest.json",
+//   "/favicon.ico",
+//   "favicon-16x16.png",
+//   "favicon-32x32.png",
+//   "/Assets/icons/android-chrome-192x192.png",
+//   "/Assets/icons/android-chrome-152x512.png",
+//   "/Assets/icons/apple-touch-icon.png",
+//   "/Assets/gifs/pink-bg.gif",
+// ];
 const URLS = [
   "/hearts/",
   "/hearts/index.html",
@@ -124,7 +124,7 @@ self.addEventListener("install", function (evt) {
   evt.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log("files were pre-cached!!");
-      return cache.addAll(URLS) || cache.addAll(FILES_TO_CACHE);
+      return cache.addAll(URLS);
     })
   );
   self.skipWaiting();
