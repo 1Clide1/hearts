@@ -129,22 +129,6 @@ self.addEventListener("install", function (evt) {
   );
   self.skipWaiting();
 });
-// activating the service worker
-self.addEventListener("activate", function (evt) {
-  evt.waitUntil(
-    caches.keys().then((keyList) => {
-      return Promise.all(
-        keyList.map((key) => {
-          if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
-            console.log("removed the old cache", key);
-            return caches.delete(key);
-          }
-        })
-      );
-    })
-  );
-  self.clients.claim();
-});
 // intercept the fetch request with the service worker
 self.addEventListener("fetch", function (evt) {
   // if the cache does not include an api
