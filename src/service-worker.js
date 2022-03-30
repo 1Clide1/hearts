@@ -74,7 +74,7 @@ self.addEventListener("message", (event) => {
 console.log("service worker ready to go!");
 // naming the cache and data
 const CACHE_NAME = "my-love-cache-v1";
-const DATA_CACHE_NAME = "data-cache-v1";
+// const DATA_CACHE_NAME = "data-cache-v1";
 
 // const FILES_TO_CACHE = [
 //   "/",
