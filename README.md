@@ -20,8 +20,7 @@ This is just an app to help me understand how to use and create a small pwa app 
 
 ## Link
 
-![link to github pages](https://1clide1.github.io/hearts/)
-![Link to heroku](https://for-edina-hearts.herokuapp.com/)
+[link to github pages](https://1clide1.github.io/hearts/)
 
 ## Technology
 
